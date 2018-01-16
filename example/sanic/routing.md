@@ -7,7 +7,7 @@ from sanic import response
 async def test(request):
     return response.text('Hello World')
 ```
-&emsp;&emsp;sanic的handler函数必须用`async`关键字定义为异步函数。
+&emsp;&emsp;sanic的handler方法必须用`async`关键字定义为异步方法。
 ## Request参数
 &emsp;&emsp;request路由规则与flask一致，可以使用变量、正则来设置。
 ```python
@@ -37,3 +37,30 @@ async def person_handler(request, name):
 async def folder_handler(request, folder_id):
     return text('Folder - {}'.format(folder_id))
 ```
+## HTTP请求类型
+&emsp;&emsp;默认请求类型是GET，如果用其它方法，需要单独指定。
+```python
+from sanic.response import text
+
+# post方法
+@app.route('/post', methods=['POST'])
+async def post_handler(request):
+    return text('POST request - {}'.format(request.json))
+
+# get方法
+@app.route('/get')
+async def get_handler(request):
+    return text('GET request - {}'.format(request.args))
+```
+&emsp;&emsp;此外，还可以指定host等额外参数。
+```python
+@app.route('/get', methods=['GET'], host='example.com')
+async def get_handler(request):
+    return text('GET request - {}'.format(request.args))
+
+# 如果host头不匹配example.com，会自动使用这条路由
+@app.route('/get')
+async def get_handler(request):
+    return text('GET request in default - {}'.format(request.args))
+```
+## add_route方法
