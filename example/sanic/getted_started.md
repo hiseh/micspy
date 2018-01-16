@@ -1,5 +1,4 @@
 # 起步：
-## Hello World
 ```python
 from sanic import Sanic
 from sanic import response
@@ -22,5 +21,3 @@ if __name__ == '__main__':
     - socket 服务器接收socket连接
     - host host地址，如果socket为None，host = host or '127.0.0.1'。0.0.0.0表示本机上所有IPv4地址，也就是不限定本机地址（一般用于多网卡服务器上）。
     - port host端口
-
-###
