@@ -64,3 +64,23 @@ async def get_handler(request):
     return text('GET request in default - {}'.format(request.args))
 ```
 ## add_route方法
+&emsp;&emsp;如上文所示，通常使用`app.route`装饰器来定义路由规则，实际上这个装饰器封装了`app.add_route`方法，所以可以像下面形式添加路由。
+```python
+from sanic.response import text
+
+# handler方法
+async def handler1(request):
+    return text('OK')
+
+async def handler2(request, name):
+    return text('Folder - {}'.format(name))
+
+async def person_handler2(request, name):
+    return text('Person - {}'.format(name))
+
+# 为每个方法添加路由
+app.add_route(handler1, '/test')
+app.add_route(handler2, '/folder/<name>')
+app.add_route(person_handler2, '/person/<name:[A-z]>', methods=['GET'])
+```
+&emsp;&emsp;这种方式可以在文件中统一管理路由，代码更清晰。
