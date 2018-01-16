@@ -20,7 +20,7 @@ if __name__ == '__main__':
     - uri URL路径
 - run() 运行HTTP Server，直到键盘中断或收到终止信号。终止前，会处理完所有的链接。
     - socket 服务器接收socket连接
-    - host host地址，如果socket为None
+    - host host地址，如果socket为None，host = host or '127.0.0.1'。0.0.0.0表示本机上所有IPv4地址，也就是不限定本机地址（一般用于多网卡服务器上）。
     - port host端口
 
 ###
