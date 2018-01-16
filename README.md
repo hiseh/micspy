@@ -13,6 +13,7 @@
 0. 学习[sanic][1]框架 一个基于协程的web框架，Flask风格，基于Python 3.5
    - [起步](./example/sanic/getted_started.md)
    - [路由](./example/sanic/routing.md)
+   - [请求数据](./example/sanic/request_data.md)
 
 0. 设计微服务框架
 
