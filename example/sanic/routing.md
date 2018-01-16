@@ -9,7 +9,7 @@ async def test(request):
 ```
 &emsp;&emsp;sanic的handler函数必须用`async`关键字定义为异步函数。
 ## Request参数
-&emsp;&emsp;request路由规则与flask一致，可以使用变量、正则来设置。
+&emsp;&emsp;request路由规则与flask一致，可以使用变量、正则来设置。
 ```python
 from sanic.response import text
 
