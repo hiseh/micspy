@@ -84,3 +84,38 @@ app.add_route(handler2, '/folder/<name>')
 app.add_route(person_handler2, '/person/<name:[A-z]>', methods=['GET'])
 ```
 &emsp;&emsp;这种方式可以在文件中统一管理路由，代码更清晰。
+## 使用url_for创建URL
+&emsp;&emsp;handler方法内可以使用`url_for`来创建URL。通过引用handler名字来构建，避免在代码中硬编码URL。
+```python
+@app.route('/')
+async def index(request):
+    # 生成一个post_handler的url
+    url = app.url_for('post_handler', post_id=5)
+    # URL是`/posts/5`
+
+    url = app.url_for('post_handler', post_id=5, arg_one='one', arg_two='two')
+    # /posts/5?arg_one=one&arg_two=two
+
+    url = app.url_for('post_handler', post_id=5, arg_one=['one', 'two'])
+    # /posts/5?arg_one=one&arg_one=two
+
+    return redirect(url)
+
+
+@app.route('/posts/<post_id>')
+async def post_handler(request, post_id):
+    return text('Post - {}'.format(post_id))
+```
+### 特殊参数
+- _anchor 锚点
+- _method 现在版本还不支持
+- _server 域名和端口号
+```python
+url = app.url_for('post_handler', post_id=5, arg_one='one', _anchor='anchor')
+# /posts/5?arg_one=one#anchor
+
+
+# you can pass all special arguments one time
+url = app.url_for('post_handler', post_id=5, arg_one=['one', 'two'], arg_two=2, _anchor='anchor', _server='another_server:8888')
+# http://another_server:8888/posts/5?arg_one=one&arg_one=two&arg_two=2#anchor
+```
