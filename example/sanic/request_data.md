@@ -1,4 +1,4 @@
-# 请求数据
+# Request数据
 &emsp;&emsp;当服务端收到HTTP请求时，路由方法会传过来`Request`对象。`Request`对象包含以下属性：
 - json JSON正文。
 ```python
