@@ -29,7 +29,7 @@ class Test(unittest.TestCase):
         '''
         测试蓝图
         '''
-        r = http('GET', '{host}/{url}'.format(host=API_HOST, url='blue/root'))
+        r = http('GET', '{host}/{url}'.format(host=API_HOST, url='blue/root?key1=value1&key2=value2'))
         print(r)
 
     def test_get_view(self):

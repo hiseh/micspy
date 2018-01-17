@@ -11,6 +11,7 @@ async def print_bp_request(request):
 
 @bp.route('/root')
 async def bp_root(request):
+    print('\ntoken:', request.token, '\n')
     return response.json({'type': 'blue print'})
 
 class TestView(views.HTTPMethodView):
