@@ -15,6 +15,7 @@
    - [路由](./example/sanic/routing.md)
    - [Request](./example/sanic/request_data.md)
    - [Response](./example/sanic/response.md)
+   - [异常](./example/sanic/exceptions.md)
 
 0. 设计微服务框架
 
