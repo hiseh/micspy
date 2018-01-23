@@ -3,8 +3,8 @@
 '''
 import unittest
 from time import time
-from test.httpie_utils import http
-from test.httpietestbase import API_HOST
+from httpie_utils import http
+from httpietestbase import API_HOST
 
 class Test(unittest.TestCase):
     '''
