@@ -17,6 +17,7 @@
    - [Response](./test/sanic/docs/response.md)
    - [异常](./test/sanic/docs/exceptions.md)
    - [中间件和监听器](./test/sanic/docs/middleware.md)
+   - [蓝图](./test/sanic/docs/blurprints.md)
 
 0. 设计微服务框架
 

@@ -3,7 +3,7 @@ the example of sanic server
 '''
 import asyncio
 from sanic import Sanic, response, exceptions
-import blurpoint
+import my_blueprint
 
 app = Sanic(__name__)
 
@@ -38,7 +38,7 @@ async def print_on_request(request):
 async def print_on_response(request, response):
     print('response middle')
 
-app.blueprint(blurpoint.bp)
+app.blueprint(my_blueprint.bp, url_prefix='/bbb')
 
 
 @app.route('/tag/<tag:[0-9]+>', methods=frozenset({'GET'}))
