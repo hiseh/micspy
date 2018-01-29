@@ -67,7 +67,7 @@ DB_USER = 'appuser'
 目前来说，Sanic有一些预定义的配置变量，我们编写应用时可以覆盖它们
 
 |变量名|默认值|描述|
-|---|---|---|---|
+| ------------- |:-------------:| -----:|
 |REQUEST_MAX_SIZE|100000000|request最大长度(bytes)|
 |REQUEST_TIMEOUT|60|request超时时间(秒)|
 |RESPONSE_TIMEOUT|60|response超时时间|
