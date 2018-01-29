@@ -53,8 +53,8 @@ app = Sanic('myapp')
 app.config.from_envvar('MYAPP_SETTINGS')
 ```
 然后我们就可以使用`MYAPP_SETTINGS`环境变量来设置配置文件路径了
-```bash
-MYAPP_SETTINGS=/path/to/config_file python3 myapp.py
+```shell
+$ MYAPP_SETTINGS=/path/to/config_file python3 myapp.py
 ```
 配置文件是一个正常的Python文件，只有全部为大写字母的变量才会被加载，通常文件内容都是如下所示的键值对。
 ```py
