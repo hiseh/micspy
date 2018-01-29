@@ -74,4 +74,4 @@ DB_USER = 'appuser'
 |KEEP_ALIVE|True|是否维持长链接|
 |KEEP_ALIVE_TIMEOUT|5|长链接超时时间(秒)|
 
-关于长链接具体的具体信息，请参见Wiki或自行百度。
+关于长链接具体的具体信息，请参见[Wiki](https://en.wikipedia.org/wiki/Keepalive)或自行百度。
