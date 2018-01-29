@@ -60,4 +60,12 @@ app.add_route(handler2, '/name/<name>', methods=frozenset({'POST'}))
 
 
 if __name__ == '__main__':
+    app.config.DB_NAME = 'appdb'
+    app.config.DB_USER = 'appuser'
+    db_settings = {
+        'DB_HOST': 'localhost',
+        'DB_NAME': 'appdb',
+        'DB_USER': 'appuser'
+    }
+    app.config.update(db_settings)
     app.run(host='0.0.0.0', port='8000', debug=True, access_log=True)

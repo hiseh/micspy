@@ -53,7 +53,7 @@ app = Sanic('myapp')
 app.config.from_envvar('MYAPP_SETTINGS')
 ```
 然后我们就可以使用`MYAPP_SETTINGS`环境变量来设置配置文件路径了
-```shell
+```bash
 $ MYAPP_SETTINGS=/path/to/config_file python3 myapp.py
 ```
 配置文件是一个正常的Python文件，只有全部为大写字母的变量才会被加载，通常文件内容都是如下所示的键值对。
@@ -63,3 +63,14 @@ DB_HOST = 'localhost'
 DB_NAME = 'appdb'
 DB_USER = 'appuser'
 ```
+## 内置变量
+目前来说，Sanic有一些预定义的配置变量，我们编写应用时可以覆盖它们。
+|变量名|默认值|描述|
+|--|--|--|--|
+|REQUEST_MAX_SIZE|100000000|request最大长度(bytes)|
+|REQUEST_TIMEOUT|60|request超时时间(秒)|
+|RESPONSE_TIMEOUT|60|response超时时间|
+|KEEP_ALIVE|True|是否维持长链接|
+|KEEP_ALIVE_TIMEOUT|5|长链接超时时间(秒)|
+
+关于长链接具体的具体信息，请参见Wiki或自行百度。
