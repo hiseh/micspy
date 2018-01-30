@@ -21,6 +21,7 @@
    7. [蓝图](./test/sanic/docs/blurprints.md)
    8. [配置](./test/sanic/docs/config.md)
    9. [handler装饰器](./test/sanic/docs/decorators.md)
+  10. [基于类的视图](./test/sanic/docs/class_based_views.md)
 
 [ x ] 设计微服务框架
 
