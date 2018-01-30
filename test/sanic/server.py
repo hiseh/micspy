@@ -3,7 +3,7 @@ the example of sanic server
 '''
 import asyncio
 from sanic import Sanic, response, exceptions
-import my_blueprint
+import my_blueprint, decorator
 
 app = Sanic(__name__)
 
@@ -42,6 +42,7 @@ app.blueprint(my_blueprint.bp, url_prefix='/bbb')
 
 
 @app.route('/tag/<tag:[0-9]+>', methods=frozenset({'GET'}))
+@decorator.decorate_handler
 async def handler1(request, tag):
     return response.json({'tag': tag})
 
