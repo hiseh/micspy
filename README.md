@@ -11,16 +11,17 @@
 
 ### 路线图：
 0. 学习[sanic][1]框架 一个基于协程的web框架，Flask风格，基于Python 3.5
-   - [Hello World](./test/sanic/docs/getted_started.md)
-   - [路由](./test/sanic/docs/routing.md)
-   - [Request](./test/sanic/docs/request_data.md)
-   - [Response](./test/sanic/docs/response.md)
-   - [异常](./test/sanic/docs/exceptions.md)
-   - [中间件和监听器](./test/sanic/docs/middleware.md)
-   - [蓝图](./test/sanic/docs/blurprints.md)
-   - [配置](./test/sanic/docs/config.md)
-   - [handler装饰器](./test/sanic/docs/decorators.md)
-   - [基于类的视图](./test/sanic/docs/class_based_views.md)
+   - [Hello World](./docs/getted_started.md)
+   - [路由](./docs/routing.md)
+   - [Request](./docs/request_data.md)
+   - [Response](./docs/response.md)
+   - [异常](./docs/exceptions.md)
+   - [中间件和监听器](./docs/middleware.md)
+   - [蓝图](./docs/blurprints.md)
+   - [配置](./docs/config.md)
+   - [handler装饰器](./docs/decorators.md)
+   - [基于类的视图](./docs/class_based_views.md)
+   - [日志](./docs/logging.md)
 
 [ x ] 设计微服务框架
 

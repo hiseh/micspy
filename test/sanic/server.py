@@ -3,9 +3,9 @@ the example of sanic server
 '''
 import asyncio
 from sanic import Sanic, response, exceptions
-import my_blueprint, decorator
+import my_blueprint, decorator, logger
 
-app = Sanic(__name__)
+app = Sanic(__name__, log_config=logger.LOG_SETTINGS)
 
 async def notify_server_started_after_five_seconds():
     await asyncio.sleep(5)
@@ -44,6 +44,7 @@ app.blueprint(my_blueprint.bp, url_prefix='/bbb')
 @app.route('/tag/<tag:[0-9]+>', methods=frozenset({'GET'}))
 @decorator.decorate_handler
 async def handler1(request, tag):
+    # raise Exception('test error')
     return response.json({'tag': tag})
 
 
